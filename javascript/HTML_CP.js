@@ -21,14 +21,14 @@ reloadGame(6);
 easyButton.addEventListener("click", function () {
     hardGameEnabled = false;
     score = 0;
-    postScore;
+    postScore();
     reloadGame(6);
 });
 
 hardButton.addEventListener("click", function () {
     hardGameEnabled = true;
     score = 0;
-    postScore;
+    postScore();
     reloadGame(12);
 });
 
@@ -53,7 +53,7 @@ function reloadGame(number) {
     //resize the gameboard
     adjustGameboardSize(hardGameEnabled);
 
-    //generate new random numbers
+    //generate new colors and squares
     for (var i = 0; i < number; i++) {
         //create list of rgb color strings ----- 6 for easy, 12 for hard
         colors.push("rgb(" + Math.floor(Math.random() * Math.floor(256)) + ", " + Math.floor(Math.random() *
@@ -71,7 +71,12 @@ function reloadGame(number) {
     winningColor = colors[Math.floor(Math.random() * Math.floor(number))];
 
     //generate click listeners
-    generateSquareClickListeners();
+    if(hardGameEnabled){
+        setTimeout(function(){generateSquareClickListeners(); console.log("Hard Ready");}, 4000);
+    }else{
+        setTimeout(function(){generateSquareClickListeners(); console.log("Easy Ready");}, 2700);
+    }
+
 
     //print message
     messageboard.innerHTML = "Find: " + winningColor;
@@ -141,16 +146,19 @@ function changeTheme() {
 //generate onclick logic for all the squares in each game
 function generateSquareClickListeners() {
 
+
+    //allow squares to be clicked
+    var clickEnabled = true;
+
     for (var i = 0; i < squares.length; i++) {
         squares[i].addEventListener("click", function () {
 
-            //allow squares to be clicked
-            var clickEnabled = true;
-
             if (clickEnabled == true) {
 
-                //victory conditions
+                //temporarily disable any clicks to the squares
+                clickEnabled = false;
 
+                //victory conditions
                 if (this.style.backgroundColor == winningColor) {
 
                     //disable reload buttons while new game automatically reloads
@@ -164,13 +172,14 @@ function generateSquareClickListeners() {
                     score = score + 1;
 
                     //update the scorecard
-                    postScore;
+                    postScore();
 
                     //create the message that game is reseting
                     messageboard.innerHTML = "Congratulations! Game will reset in a few seconds...";
 
                     //reload a new game after a few seconds
                     setTimeout(function () {
+                        clickEnabled = true;
                         easyButton.disabled = false;
                         hardButton.disabled = false;
                         if (hardGameEnabled == true) {
@@ -192,7 +201,7 @@ function generateSquareClickListeners() {
                     score = 0;
 
                     //update the scorecard
-                    postScore;
+                    postScore();
 
                     setTimeout(function () {
                         clickEnabled = true;

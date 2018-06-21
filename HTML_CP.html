@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <link rel="stylesheet" href="css/HTML_CP.css">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+        crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+
+        <header class="row">
+            <div class="main-header">
+                <h1 class="col col--1-of-2 col--m-1-of-2 text-size-l">The RGB Game</h1>
+                <h3 class="col col--1-of-4 col--m-1-of-2 col--push-1-of-4 col--ab scorecard text-size-m">Score -
+                    <span class="highlight">0</span>
+                </h3>
+            </div>
+        </header>
+
+        <div class="row">
+            <div class="col col--1-of-2 col--centered sub-header">
+                <h2 class="message-board text-align-c text-color-b text-size-m"></h2>
+            </div>
+        </div>
+
+
+        <div class="game-spacing row">
+            <div id="game-board" class="game-board col--centered">
+
+            </div>
+        </div>
+
+        <footer class="row">
+            <fieldset class="row col--2-of-3 col--centered theme-box">
+                <ul>
+                    <li class="col--1-of-5">
+                        <i class="fas fa-sun fa-3x"></i>
+                    </li>
+                    <li class="col--1-of-5">
+                        <input type="radio" name="theme" value="light" class="theme-light" checked>
+                        </label>
+                    </li>
+                    <li class="col--1-of-5">
+                        <input type="radio" name="theme" value="medium" class="theme-medium">
+                        </label>
+                    </li>
+                    <li class="col--1-of-5">
+                        <input type="radio" name="theme" value="dark" class="theme-dark">
+                        </label>
+                    </li>
+                    <li class="col--1-of-5">
+                        <i class="fas fa-moon fa-3x"></i>
+                    </li>
+                </ul>
+            </fieldset>
+            <fieldset class="row col--2-of-3 col--centered">
+                <div class="col col--1-of-2 center">
+                    <button class="difficulty easy-button col--centered">Easy Game</button>
+                </div>
+                <div class="col col--1-of-2">
+                    <button class="difficulty hard-button col--centered">Hard Game</button>
+                </div>
+            </fieldset>
+        </footer>
+
+    </div>
+
+</body>
+
+<script src="javascript/HTML_CP.js"></script>
+
+</html>

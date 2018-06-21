@@ -1,0 +1,32 @@
+/*////////////////////////////////
+BUTTON TEMPLATE
+////////////////////////////////*/
+
+button{
+    background-color: $color-light-gray;
+    font-family: $text-font;
+    font-size: $text-size-lv1;
+    border: 2px $color-dark-gray solid;
+    padding: 5px 45px;
+    transition: .25s all;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, .3);
+
+}
+
+button:disabled{
+    border: 2px $color-med-gray solid;
+}
+
+button:hover{
+    padding: 5px 55px;
+}
+
+button:active{
+    transition-duration: .1s;
+    background-color: $color-dark-gray;
+    color: $color-light-gray;
+    transform: translateY(3px);
+    padding: 5px 55px;
+    box-shadow: none;
+}
+

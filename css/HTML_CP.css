@@ -1,0 +1,600 @@
+@charset "UTF-8";
+/*////////////////////////////////
+COLOR PALLETTE
+////////////////////////////////*/
+/*////////////////////////////////
+TEXT SIZE VARIABLES
+////////////////////////////////*/
+/*////////////////////////////////
+FONT VARIABLES
+////////////////////////////////*/
+/*////////////////////////////////
+REMOVE BROWSER DEFAULTS
+////////////////////////////////*/
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+/*////////////////////////////////
+SQUARE ANIMATIONS
+////////////////////////////////*/
+@keyframes squareLoad {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes squareClose {
+  from {
+    transform: scaleY(1);
+  }
+  to {
+    transform: scaleY(0);
+  }
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  background-color: #e7e7e7;
+  font-family: "Quicksand", sans-serif;
+}
+
+header {
+  margin-bottom: 40px;
+}
+
+i {
+  color: #5e5d5d;
+}
+
+fieldset {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: none;
+}
+
+legend {
+  font-family: "Quicksand", sans-serif;
+  font-weight: 700;
+}
+
+ul {
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+}
+
+/*////////////////////////////////
+SET DISPLAY
+////////////////////////////////*/
+.set-inline {
+  display: inline-block;
+}
+
+/*////////////////////////////////
+SET ALIGNMENT
+////////////////////////////////*/
+.align-left {
+  float: left;
+}
+
+.align-right {
+  float: right;
+}
+
+/*////////////////////////////////
+BOARD WITH SQUARES
+////////////////////////////////*/
+.game-board {
+  width: 95%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+}
+
+/*////////////////////////////////
+CENTER BLOCK ITEMS
+////////////////////////////////*/
+.center {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*////////////////////////////////
+REGION THAT GIVES GAMEBOARD VERTICAL SPACE
+////////////////////////////////*/
+.game-spacing {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  justify-content: end;
+  margin-bottom: 5vh;
+  border-top: #5e5d5d solid 2px;
+  border-bottom: #5e5d5d solid 2px;
+  transition: .5s all;
+}
+
+.container {
+  max-width: 960px;
+  padding: 30px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*-----------------------------------*  $TOAST-GRID
+  An insane grid.
+  You'd be mad to use it.
+  Usage
+  =====
+  Assuming default values:
+  <div class="grid">
+    <div class="grid__col grid__col--1-of-2">
+      A half-width column.
+    </div>
+    <div class="grid__col grid__col--1-of-4 grid__col--pull-1-of-4">
+      A quarter, pulled left by its own width. You get this, right?
+    </div>
+  </div>
+  Customisation
+  =============
+  $toast-grid-namespace and $toast-grid-column-namespace
+  adjusts the class names for the grid. With
+  default values, grid wrappers have a class
+  of '.grid' and columns '.grid__col'.
+  $toast-col-groups(n) adjusts column divisions.
+  For example, $toast-col-groups(12) will produce
+  a 12-column grid. $col-groups(3,6,8)
+  will produce a 3-, 6-, and 8-column grid.
+  $toast-gutter-width is—you guessed it—the gutter
+  width. Accepts any unit.
+  That's it. Have fun.
+\*-----------------------------------*/
+.row {
+  list-style: none;
+  margin-left: -10px;
+}
+
+.col--2-of-2, .col--3-of-3, .col--4-of-4, .col--5-of-5, .col--6-of-6, .col--8-of-8, .col--12-of-12 {
+  width: 100%;
+}
+
+.col--1-of-2, .col--2-of-4, .col--3-of-6, .col--4-of-8, .col--6-of-12 {
+  width: 50%;
+}
+
+.col--1-of-3, .col--2-of-6, .col--4-of-12 {
+  width: 33.33333%;
+}
+
+.col--2-of-3, .col--4-of-6, .col--8-of-12 {
+  width: 66.66667%;
+}
+
+.col--1-of-4, .col--2-of-8, .col--3-of-12 {
+  width: 25%;
+}
+
+.col--3-of-4, .col--6-of-8, .col--9-of-12 {
+  width: 75%;
+}
+
+.col--push-2-of-2, .col--push-3-of-3, .col--push-4-of-4, .col--push-5-of-5, .col--push-6-of-6, .col--push-8-of-8, .col--push-12-of-12 {
+  margin-left: 100%;
+}
+
+.col--push-1-of-2, .col--push-2-of-4, .col--push-3-of-6, .col--push-4-of-8, .col--push-6-of-12 {
+  margin-left: 50%;
+}
+
+.col--push-1-of-3, .col--push-2-of-6, .col--push-4-of-12 {
+  margin-left: 33.33333%;
+}
+
+.col--push-2-of-3, .col--push-4-of-6, .col--push-8-of-12 {
+  margin-left: 66.66667%;
+}
+
+.col--push-1-of-4, .col--push-2-of-8, .col--push-3-of-12 {
+  margin-left: 25%;
+}
+
+.col--push-3-of-4, .col--push-6-of-8, .col--push-9-of-12 {
+  margin-left: 75%;
+}
+
+.col--1-of-5 {
+  width: 20%;
+}
+
+.col--push-1-of-5 {
+  margin-left: 20%;
+}
+
+.col--2-of-5 {
+  width: 40%;
+}
+
+.col--push-2-of-5 {
+  margin-left: 40%;
+}
+
+.col--3-of-5 {
+  width: 60%;
+}
+
+.col--push-3-of-5 {
+  margin-left: 60%;
+}
+
+.col--4-of-5 {
+  width: 80%;
+}
+
+.col--push-4-of-5 {
+  margin-left: 80%;
+}
+
+.col--1-of-6 {
+  width: 16.66667%;
+}
+
+.col--push-1-of-6 {
+  margin-left: 16.66667%;
+}
+
+.col--5-of-6 {
+  width: 83.33333%;
+}
+
+.col--push-5-of-6 {
+  margin-left: 83.33333%;
+}
+
+.col--1-of-8 {
+  width: 12.5%;
+}
+
+.col--push-1-of-8 {
+  margin-left: 12.5%;
+}
+
+.col--3-of-8 {
+  width: 37.5%;
+}
+
+.col--push-3-of-8 {
+  margin-left: 37.5%;
+}
+
+.col--5-of-8 {
+  width: 62.5%;
+}
+
+.col--push-5-of-8 {
+  margin-left: 62.5%;
+}
+
+.col--7-of-8 {
+  width: 87.5%;
+}
+
+.col--push-7-of-8 {
+  margin-left: 87.5%;
+}
+
+.col--1-of-12 {
+  width: 8.33333%;
+}
+
+.col--push-1-of-12 {
+  margin-left: 8.33333%;
+}
+
+.col--2-of-12 {
+  width: 16.66667%;
+}
+
+.col--push-2-of-12 {
+  margin-left: 16.66667%;
+}
+
+.col--5-of-12 {
+  width: 41.66667%;
+}
+
+.col--push-5-of-12 {
+  margin-left: 41.66667%;
+}
+
+.col--7-of-12 {
+  width: 58.33333%;
+}
+
+.col--push-7-of-12 {
+  margin-left: 58.33333%;
+}
+
+.col--10-of-12 {
+  width: 83.33333%;
+}
+
+.col--push-10-of-12 {
+  margin-left: 83.33333%;
+}
+
+.col--11-of-12 {
+  width: 91.66667%;
+}
+
+.col--push-11-of-12 {
+  margin-left: 91.66667%;
+}
+
+.col {
+  box-sizing: border-box;
+  display: inline-block;
+  margin-right: -.25em;
+  min-height: 1px;
+  padding-left: 10px;
+  vertical-align: top;
+}
+
+@media (max-width: 700px) {
+  .col {
+    display: block;
+    margin-left: 0;
+    margin-right: 0;
+    width: auto;
+  }
+}
+
+@media (max-width: 700px) and (min-width: 480px) {
+  .col[class*="col--m-"] {
+    display: inline-block;
+    margin-right: -.24em;
+  }
+  .col.col--m-1-of-2, .col.col--m-2-of-4 {
+    width: 50%;
+  }
+  .col.col--m-1-of-3 {
+    width: 33.33333%;
+  }
+  .col.col--m-2-of-3 {
+    width: 66.66667%;
+  }
+  .col.col--m-1-of-4 {
+    width: 25%;
+  }
+  .col.col--m-3-of-4 {
+    width: 75%;
+  }
+}
+
+@media (max-width: 480px) {
+  .col[class*="col--s-"] {
+    display: inline-block;
+    margin-right: -.24em;
+  }
+  .col.col--s-1-of-2, .col.col--s-2-of-4 {
+    width: 50%;
+  }
+  .col.col--s-1-of-3 {
+    width: 33.33333%;
+  }
+  .col.col--s-2-of-3 {
+    width: 66.66667%;
+  }
+  .col.col--s-1-of-4 {
+    width: 25%;
+  }
+  .col.col--s-3-of-4 {
+    width: 75%;
+  }
+}
+
+.col--centered {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.col--d-first {
+  float: left;
+}
+
+.col--d-last {
+  float: right;
+}
+
+.row--no-gutter {
+  margin-left: 0;
+  width: 100%;
+}
+
+.row--no-gutter .col {
+  padding-left: 0;
+}
+
+.row--no-gutter .col--span-all {
+  margin-left: 0;
+  width: 100%;
+}
+
+.col--ab {
+  vertical-align: bottom;
+}
+
+.col--am {
+  vertical-align: middle;
+}
+
+.theme-box {
+  border: double #5e5d5d;
+  border-width: 5px;
+  margin-bottom: 20px;
+}
+
+/*////////////////////////////////
+BUTTON TEMPLATE
+////////////////////////////////*/
+button {
+  background-color: #e7e7e7;
+  font-family: "Quicksand", sans-serif;
+  font-size: 1.8rem;
+  border: 2px #5e5d5d solid;
+  padding: 5px 45px;
+  transition: .25s all;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+button:disabled {
+  border: 2px #8e8e8e solid;
+}
+
+button:hover {
+  padding: 5px 55px;
+}
+
+button:active {
+  transition-duration: .1s;
+  background-color: #5e5d5d;
+  color: #e7e7e7;
+  transform: translateY(3px);
+  padding: 5px 55px;
+  box-shadow: none;
+}
+
+/*////////////////////////////////
+TEXT COLOR
+////////////////////////////////*/
+.text-color-w {
+  color: #e7e7e7;
+}
+
+.text-color-b {
+  color: #5e5d5d;
+}
+
+/*////////////////////////////////
+TEXT SIZE
+////////////////////////////////*/
+.text-size-s {
+  font-size: 1.8rem;
+}
+
+.text-size-m {
+  font-size: 2.4rem;
+}
+
+.text-size-l {
+  font-size: 3.6rem;
+}
+
+.text-align-l {
+  text-align: left;
+}
+
+.text-align-c {
+  text-align: center;
+}
+
+.text-align-r {
+  text-align: right;
+}
+
+@media (min-width: 480px) {
+  .scorecard {
+    text-align: end;
+  }
+}
+
+/*////////////////////////////////
+HIGHLIGHT A SPAN ELEMENT
+////////////////////////////////*/
+.highlight {
+  background-color: #5e5d5d;
+  color: #e7e7e7;
+  font-weight: 700;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+/*////////////////////////////////
+SQUARE TEMPLATE
+////////////////////////////////*/
+.square {
+  transition: .5s all;
+  animation-duration: .5s;
+  animation-name: squareLoad;
+  animation-timing-function: linear;
+  animation-fill-mode: backwards;
+  padding-bottom: 40vh;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+/*////////////////////////////////
+THEME LIST
+////////////////////////////////*/
+ul {
+  list-style-type: none;
+}
+
+li {
+  display: flex;
+  justify-content: center;
+  align-content: middle;
+}
+
+li label {
+  font-size: 1.8rem;
+}
+
+input {
+  transition: .5s all;
+  align-self: center;
+}
+
+/*////////////////////////////////
+SQUARE SIZES
+////////////////////////////////*/
+.is-hard {
+  padding-bottom: 20vh;
+}
+
+/*////////////////////////////////
+HIDE SQUARE
+////////////////////////////////*/
+.is-invisible {
+  animation-name: squareClose;
+  animation-duration: .25s;
+  animation-delay: 0;
+  animation-fill-mode: both;
+}
+
+/*////////////////////////////////
+THEME COLORS
+////////////////////////////////*/
+.is-theme-light {
+  background-color: #e7e7e7;
+}
+
+.is-theme-medium {
+  background-color: #8e8e8e;
+}
+
+.is-theme-dark {
+  background-color: #5e5d5d;
+}
+
+.is-hard-gameboard {
+  min-height: 43vh;
+}
+/*# sourceMappingURL=HTML_CP.css.map */

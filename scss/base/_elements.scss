@@ -1,0 +1,38 @@
+html{
+    font-size: 10px;
+}
+
+body{
+    background-color: $color-light-gray;
+    font-family: $text-font;
+}
+
+header{
+    margin-bottom: 40px;
+}
+
+footer{
+
+}
+
+i{
+    color: $color-dark-gray;
+    //display: inline-block;
+}
+
+fieldset{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: none;
+}
+
+legend{
+    font-family: $text-font;
+    font-weight: 700;
+}
+
+ul{
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+}

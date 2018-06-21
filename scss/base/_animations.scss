@@ -1,0 +1,21 @@
+/*////////////////////////////////
+SQUARE ANIMATIONS
+////////////////////////////////*/
+
+@keyframes squareLoad{
+    from{
+        transform: scaleY(0);
+    }
+    to{
+        transform: scaleY(1);
+    }
+}
+
+@keyframes squareClose{
+    from{
+        transform: scaleY(1);
+    }
+    to{
+        transform: scaleY(0);
+    }
+}

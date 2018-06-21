@@ -1,0 +1,22 @@
+/*////////////////////////////////
+THEME LIST
+////////////////////////////////*/
+
+ul{
+    list-style-type: none;
+}
+
+li{
+    display: flex;
+    justify-content: center;
+    align-content: middle;
+}
+
+li label{
+    font-size: $text-size-lv1;
+}
+
+input{
+    transition: .5s all;
+    align-self: center;
+}

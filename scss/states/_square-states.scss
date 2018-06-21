@@ -1,0 +1,18 @@
+/*////////////////////////////////
+SQUARE SIZES
+////////////////////////////////*/
+
+.is-hard{
+    padding-bottom: 20vh;
+}
+
+/*////////////////////////////////
+HIDE SQUARE
+////////////////////////////////*/
+
+.is-invisible{
+    animation-name: squareClose;
+    animation-duration: .25s;
+    animation-delay: 0;
+    animation-fill-mode: both;
+}

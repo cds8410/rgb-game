@@ -1,0 +1,45 @@
+
+
+/*////////////////////////////////
+BOARD WITH SQUARES
+////////////////////////////////*/
+
+.game-board{
+    width: 95%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+}
+
+/*////////////////////////////////
+CENTER BLOCK ITEMS
+////////////////////////////////*/
+.center{
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*////////////////////////////////
+REGION THAT GIVES GAMEBOARD VERTICAL SPACE
+////////////////////////////////*/
+
+.game-spacing{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    //height: 50vh;
+    // display: flex;
+    // flex-direction: column;
+    justify-content: end;
+    margin-bottom: 5vh;
+    border-top: $color-dark-gray solid 2px;
+    border-bottom: $color-dark-gray solid 2px;
+    transition: .5s all;
+}
+
+.container{
+    max-width: 960px;
+    padding: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}

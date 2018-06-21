@@ -1,0 +1,65 @@
+/*////////////////////////////////
+TEXT COLOR
+////////////////////////////////*/
+
+.text-color-w{
+    color: $color-light-gray;
+}
+
+.text-color-b{
+    color: $color-dark-gray;
+}
+
+/*////////////////////////////////
+TEXT SIZE
+////////////////////////////////*/
+
+.text-size-s{
+    font-size: $text-size-lv1;
+}
+
+.text-size-m{
+    font-size: $text-size-lv2;
+}
+
+.text-size-l{
+    font-size: $text-size-lv3;
+}
+
+// /*////////////////////////////////
+// MESSAGES ABOVE GAME BOARD
+// ////////////////////////////////*/
+
+.text-align-l{
+    text-align: left;
+}
+
+.text-align-c{
+    text-align: center
+}
+
+.text-align-r{
+    text-align: right;
+}
+
+// /*////////////////////////////////
+// SCORES IN HEADER
+// ////////////////////////////////*/
+
+@media(min-width: $toast-breakpoint-small){
+    .scorecard{
+        text-align: end;
+    }
+}
+
+/*////////////////////////////////
+HIGHLIGHT A SPAN ELEMENT
+////////////////////////////////*/
+
+.highlight{
+    background-color: $color-dark-gray;
+    color: $color-light-gray;
+    font-weight: 700;
+    padding-left: 8px;
+    padding-right: 8px;
+}
